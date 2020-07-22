@@ -1,5 +1,5 @@
 # MWA-Project
-- onlineshopping like amazon with limited features
+- onlineshoping like amazon with limited features
 
 ## Installation steps.
 
@@ -15,7 +15,6 @@
 
 - listens on localhost:3000 and localhost:4200 respectively
 
-if cron tab and jspdf modules didnt work; please install them
 
 ## pushing to github 
 To avoid merge conflict flow the following when you do push

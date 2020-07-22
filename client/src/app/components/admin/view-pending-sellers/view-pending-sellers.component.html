@@ -1,0 +1,39 @@
+
+<app-nav></app-nav>
+
+<p>view-pending-sellers works!</p>
+
+<div class="container">
+    <div class="row">
+        <div class="col-lg-3">
+            <app-side-admin></app-side-admin>
+        </div>
+    
+        <div class="col-md-9">
+            <h2 style="margin: auto"> Pending Sellers</h2>
+            
+            <table class="table table-striped">
+                <thead>
+                    <tr>
+                        <th>Seller id</th>
+                        <th>status</th>
+                        <th>Email Id</th>
+                        <th></th>
+                        <th></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let seller of sellers">
+                        <td>{{seller._id}}</td>
+                        <td>{{seller.status}}</td>
+                        <td>{{seller.email}}</td>
+                        <td><button class="btn btn-success" (click)="approveSeller(seller)"> Approve</button></td>
+                        <td>
+                            <button class="btn btn-warning" (click)="declineSeller(seller)" style="margin-left: 20px;"> Decline</button>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>

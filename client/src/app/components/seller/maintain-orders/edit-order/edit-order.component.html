@@ -1,0 +1,40 @@
+<p>edit-order works!</p>
+
+<p>manage-products works!</p>
+
+
+<app-nav></app-nav>
+
+
+<div class="container">
+    <div class="row">
+        <div class="col-lg-3">
+            <app-side-seller></app-side-seller>
+        </div>
+    <div class="col-lg-9">
+        <h2>Change Status</h2>
+
+        <form [formGroup]="statusForm" (ngSubmit)="onSubmit()">
+
+           
+    
+            <div class="form-group">
+                <label for="role">Status:</label>
+                <select class="form-control" id="status" formControlName="status" name="status">
+                    <option>{{status}}</option>
+                    <option>Shipped</option>
+                    <option>On The Way</option>
+                    <option>Delivered</option>
+                </select>
+            </div>
+    
+            <button class="btn btn-success">Update Status</button>
+        </form>
+
+        <br>
+        <button class="btn btn-danger" (click)="cancelOrder()" style="margin-left: 20px;">Cancel Order </button>
+        
+       
+    </div>
+    </div>
+</div>

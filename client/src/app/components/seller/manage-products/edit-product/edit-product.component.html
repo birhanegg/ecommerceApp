@@ -1,0 +1,65 @@
+<p>edit-product works!</p>
+
+<p>add-product works!</p>
+
+<p>manage-products works!</p>
+
+
+<app-nav></app-nav>
+<p>add wordks!</p>
+
+<div class="container">
+    <div class="row">
+        <div class="col-lg-3">
+            <app-side-seller></app-side-seller>
+        </div>
+    <div class="col-lg-9">
+        <h2>Edit Prodcuts</h2>
+
+        <form [formGroup]="editForm" (ngSubmit)="onSubmit()">
+
+            <div class="hidden">
+                <input type="hidden" formControlName="_id" placeholder="id" name="_id" class="form-control" id="id">
+            </div>
+
+            <div class="hidden">
+                <input type="hidden" formControlName="createDate" placeholder="createDate" name="createDate" class="form-control" id="id">
+            </div>
+            
+
+            <div class="form-group">
+                <input type="text" formControlName="status" placeholder="status" name="status" class="form-control" id="status">
+            </div>
+
+            <div class="form-group">
+                <label for="title">Title:</label>
+                <input formControlName="title" placeholder="Title" name="title" class="form-control" id="title">
+            </div>
+
+            <div class="form-group">
+                <label for="catagory">Catagory:</label>
+                <input formControlName="catagoryId" placeholder="Catagory" name="catagoryId" class="form-control" id="catagoryId">
+            </div>
+    
+            <div class="form-group">
+                <label for="price">Price:</label>
+                <input formControlName="price" placeholder="price" name="price" class="form-control" id="price">
+            </div>
+    
+            <div class="form-group">
+                <label for="imageName">Image Name:</label>
+                <input type="text" formControlName="imageName" placeholder="Image Name" name="imageName" class="form-control" id="imageName">
+            </div>
+    
+            <div class="form-group">
+                <label for="role">Descrition:</label>
+                <input formControlName="descreption" placeholder="description" name="descreption" class="form-control" id="descreption">
+            </div>
+    
+            <button class="btn btn-success">Update</button>
+        </form>
+        
+       
+    </div>
+    </div>
+</div>

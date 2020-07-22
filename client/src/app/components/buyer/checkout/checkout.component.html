@@ -1,0 +1,63 @@
+<p></p>
+
+
+<app-nav></app-nav>
+
+<div>
+   <br><br>
+</div>
+<div class="container">
+    <div class="row">
+        <div class="col-lg-3">
+            <app-side-buyer></app-side-buyer>
+        </div>
+    <div class="col-lg-9"><br><br>
+      <h2>Payment Information</h2>
+      <h2>Total Price: ${{totalPrice}} </h2>
+            <form [formGroup]="checkoutForm" (ngSubmit)="onSubmit()">
+
+                <div class="row">
+
+                <div class="col-sm-6">
+
+                    <div class="form-group">
+                        <label for="name">Name of Buyer:</label>
+                        <input formControlName="nameOnCard" placeholder="" name="nameOnCard" class="form-control" id="nameOnCard">
+                    </div>
+                    <div class="form-group">
+                      <label for="cardOwnerName">Card owner Name:</label>
+                      <input formControlName="nameOnCard" placeholder="" name="nameOnCard" class="form-control" id="nameOnCard">
+                  </div>
+
+                    <div class="form-group">
+                        <label for="cardNumber">Card Number:</label>
+                        <input type="text" formControlName="cardNumber" placeholder="XXXXXXXXXX" name="cardNumber" class="form-control" id="cardNumber">
+                    </div>
+
+                </div>
+
+                <div class="col-sm-6">
+
+                    <div class="form-group">
+                        <label for="cvv">CVV:</label>
+                        <input formControlName="cvv" placeholder="" name="cvv" class="form-control" id="cvv">
+                    </div>
+                    <div class="form-group">
+                      <label for="expiryDate">Expiry Date:</label>
+                      <input formControlName="month" placeholder="month" name="month" class="form-control" id="month"> <br><br>
+                      <input formControlName="year" placeholder="year" name="year" class="form-control" id="year">
+
+                    </div>
+
+                    <button (click)="checkout()"  class="btn btn-danger btn-lg btn-block">Checkout</button>
+                </div>
+
+            </div>
+            </form>
+
+
+
+    </div>
+    </div>
+</div>
+<script src="https://js.stripe.com/v3/"></script>

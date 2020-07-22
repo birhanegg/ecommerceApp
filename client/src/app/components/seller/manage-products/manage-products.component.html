@@ -1,0 +1,45 @@
+<p>manage-products works!</p>
+
+
+<app-nav></app-nav>
+<p>seller wordks!</p>
+
+<div class="container">
+    <div class="row">
+        <div class="col-lg-3">
+            <app-side-seller></app-side-seller>
+        </div>
+    <div class="col-lg-9">
+        <h2>Manage Prodcuts</h2>
+
+        <button class="btn btn-danger" style="width:300px" (click)="addProduct()"> Add Product</button>
+        
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th>Title</th>
+                    <th>Price</th>
+                    <th>Status</th>
+                    <th>Image Name</th>
+                    <th>Description</th>
+                    <th></th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let product of products">
+                    <td>{{product.title}}</td>
+                    <td>{{product.price}}</td>
+                    <td>{{product.status}}</td>
+                    <td>{{product.imageName}}</td>
+                    <td>{{product.descreption}}</td>
+                    <td><button class="btn btn-success" (click)="editProduct(product)"> Edit</button> </td>
+                    <td>
+                        <button class="btn btn-warning" (click)="deleteProduct(product)" style="margin-left: 20px;"> Delete</button>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    </div>
+</div>

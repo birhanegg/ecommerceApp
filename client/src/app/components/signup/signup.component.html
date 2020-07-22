@@ -1,0 +1,77 @@
+<div class="container">
+    <div>
+        <p align="right">
+            <a href="/login" class="ml-2">Login</a>
+        </p>
+        <hr>
+    </div>
+
+    <div>
+        <h3>Subscription form </h3>
+    </div>
+    <div class="row">
+        <div class="col-lg-3">
+            <!-- <h1 class="my-4">User Name</h1>
+                <div class="list-group">
+                    <a href="admin/view-pending-reviews" class="list-group-item">Manage Pending Reviews</a>
+                    <a href="admin/view-pending-sellers" class="list-group-item">Manage Pending Sellers</a>
+                </div> -->
+        </div>
+
+        <div class="col-lg-9">
+            <div class="col-md-6 user-container">
+
+                <form [formGroup]="addForm" (ngSubmit)="onSubmit()">
+
+                    <div class="form-group">
+                        <label for="name"> Name:</label>
+                        <input formControlName="name" placeholder="Name" name="name" class="form-control" id="name">
+                        <span class="text-danger"
+                                *ngIf="(registerFormControl.name.touched || submitted) && registerFormControl.name.errors?.required">
+                                Name is required
+                        </span>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="email">Email:</label>
+                        <input formControlName="email" required placeholder="Email" name="email" class="form-control" id="email">
+                        <span class="text-danger"
+                        *ngIf="(registerFormControl.email.touched || submitted) && registerFormControl.email.errors?.required">
+                        Email is required
+                        </span>
+                        <span class="text-danger"
+                        *ngIf="registerFormControl.email.touched && registerFormControl.email.errors?.email">
+                        Enter a valid email address
+                        </span>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="password">Password:</label>
+                        <input formControlName="password" placeholder="password" type="password" name="password" class="form-control" id="password">
+                    <span class="text-danger"
+                        *ngIf="(registerFormControl.password.touched || submitted) && registerFormControl.password.errors?.required">
+                        Password is required
+                    </span>
+                    <span class="text-danger"
+                        *ngIf="registerFormControl.password.touched && registerFormControl.password.errors?.invalidPassword">
+                        Password should have minimum 8 characters, at least 1 uppercase letter, 1 lowercase
+                        letter and 1 number
+                    </span>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="role">Role:</label>
+                        <!-- <input formControlName="role" placeholder="Buyer/Seller" name="role" class="form-control" id="role"> -->
+                        <select class="form-control" id="role" formControlName="role" name="role">
+                        <option value="buyer">Buyer</option>
+                        <option value="seller">Seller</option>                    
+                      </select>
+                    </div>
+
+                    <button class="btn btn-success">Add</button>
+                </form>
+            </div>
+
+        </div>
+    </div>
+</div>

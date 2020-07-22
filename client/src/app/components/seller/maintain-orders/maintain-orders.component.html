@@ -1,0 +1,40 @@
+<p>maintain-orders works!</p>
+
+
+
+<app-nav></app-nav>
+<p>seller wordks!</p>
+
+<div class="container">
+    <div class="row">
+        <div class="col-lg-3">
+            <app-side-seller></app-side-seller>
+        </div>
+    <div class="col-lg-9">
+        <h2>Maintain Orders</h2>
+        
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th>Order Id</th>
+                    <th>Order Date</th>
+                    <th>Status</th>
+                    <th>Shipping Address</th>
+                    <th></th>
+                    
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let order of orders">
+                    <td>{{order._id}}</td>
+                    <td>{{order.orderDate}}</td>
+                    <td> {{order.status}}</td>
+                    <td>{{order.shippingAddress.street}}, {{order.shippingAddress.city}}, {{order.shippingAddress.zipCode}}, {{order.shippingAddress.state}}, {{order.shippingAddress.country}}</td>
+                    <td><button class="btn btn-success" (click)="changeOrderStatus(order)">Change Status </button> </td>
+                    
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    </div>
+</div>

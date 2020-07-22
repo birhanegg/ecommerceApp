@@ -1,0 +1,43 @@
+<p>view-orders works!</p>
+
+
+
+
+<app-nav></app-nav>
+
+<div>
+   <br><br>
+</div>
+<div class="container">
+    <div class="row">
+        <div class="col-lg-3">
+            <app-side-buyer></app-side-buyer>
+        </div>
+    <div class="col-lg-9"><br><br>
+        <h2>Orders</h2>
+
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th>Product Name</th>
+                    <th>Order Date</th>
+                    <th>Shipping Address</th>
+                    <th>Status</th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let order of orders">
+                    <td>{{order.productId}}</td>
+                    <td>{{order.orderDate}}</td>
+                    <td>{{order.shippingAddress.street}} {{order.shippingAddress.city}}, {{order.shippingAddress.zipCode}}, {{order.shippingAddress.state}}, {{order.shippingAddress.country}}, {{order.shippingAddress.phoneNo}}</td>
+                    <td>{{order.status}}</td>
+                </tr>
+            </tbody>
+        </table>
+
+                <button class="btn btn-danger" style="width:300px" (click)="printToPdf()"> Print To PDFs</button>
+
+    </div>
+    </div>
+</div>

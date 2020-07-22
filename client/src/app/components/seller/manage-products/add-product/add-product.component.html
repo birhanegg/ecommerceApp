@@ -1,0 +1,58 @@
+<p>add-product works!</p>
+
+<p>manage-products works!</p>
+
+
+<app-nav></app-nav>
+<p>add wordks!</p>
+
+<div class="container">
+    <div class="row">
+        <div class="col-lg-3">
+            <app-side-seller></app-side-seller>
+        </div>
+    <div class="col-lg-9">
+        <h2>Add New Prodcuts</h2>
+
+        <form [formGroup]="addForm" (ngSubmit)="onSubmit()">
+
+            <div class="form-group">
+                <label for="title">Title:</label>
+                <input formControlName="title" placeholder="Title" name="title" class="form-control" id="title">
+            </div>
+
+            <div class="form-group">
+                <label for="catagory">Catagory:</label>
+                <!-- <input formControlName="role" placeholder="Buyer/Seller" name="role" class="form-control" id="role"> -->
+                <select class="form-control" id="catagory" formControlName="catagory" name="catagory">
+                    <option value="electronics">Electronics</option>
+                    <option value="furniture">Furniture</option>
+                    <option value="books">Books</option>
+                    <option value="sports">Sports</option>
+                    <option value="clothing">Clothing</option>
+                    <option value="food">Food</option>
+                  </select>
+            </div>
+    
+            <div class="form-group">
+                <label for="price">Price:</label>
+                <input formControlName="price" placeholder="price" name="price" class="form-control" id="price">
+            </div>
+    
+            <div class="form-group">
+                <label for="imageName">Image Name:</label>
+                <input type="text" formControlName="imageName" placeholder="Image Name" name="imageName" class="form-control" id="imageName">
+            </div>
+    
+            <div class="form-group">
+                <label for="role">Descrition:</label>
+                <input formControlName="description" placeholder="description" name="description" class="form-control" id="description">
+            </div>
+    
+            <button class="btn btn-success">Add</button>
+        </form>
+        
+       
+    </div>
+    </div>
+</div>

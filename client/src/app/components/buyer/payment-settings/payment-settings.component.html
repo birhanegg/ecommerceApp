@@ -1,0 +1,90 @@
+<p>payment-settings works!</p>
+
+<app-nav></app-nav>
+
+<div>
+   <br><br>
+</div>
+<div class="container">
+    <div class="row">
+        <div class="col-lg-3">
+            <app-side-buyer></app-side-buyer>
+        </div>
+    <div class="col-lg-9"><br><br>
+        <h2>Payment Setting</h2>
+
+        
+        
+            <form [formGroup]="paymentForm" (ngSubmit)="onSubmit()">
+                <div class="row">
+                <div class="col-sm-6">
+                    <!-- <div class="hidden">
+                        <input type="hidden" formControlName="_id" placeholder="id" name="_id" class="form-control" id="id">
+                    </div> -->
+                    <!-- <div class="hidden">
+                        <input type="hidden" formControlName="status" placeholder="status" name="status" class="form-control" id="status">
+                    </div> -->
+        
+                    <div class="form-group">
+                        <label for="street">Street:</label>
+                        <input formControlName="street" placeholder="Street" name="street" class="form-control" id="street">
+                    </div>
+        
+                    <div class="form-group">
+                        <label for="zipCode">Zip Code:</label>
+                        <input formControlName="zipCode" placeholder="Zip Code" name="zipCode" class="form-control" id="zipCode">
+                    </div>
+            
+                    <div class="form-group">
+                        <label for="city">City:</label>
+                        <input formControlName="city" placeholder="City" name="city" class="form-control" id="city">
+                    </div>
+            
+                    <div class="form-group">
+                        <label for="state">State:</label>
+                        <input type="text" formControlName="state" placeholder="State" name="state" class="form-control" id="state">
+                    </div>
+            
+                    <div class="form-group">
+                        <label for="country">Country:</label>
+                        <input formControlName="country" placeholder="Country" name="country" class="form-control" id="country">
+                    </div>
+        
+                    <div class="form-group">
+                        <label for="phone">Phone No:</label>
+                        <input formControlName="phoneNo" placeholder="phone No." name="phoneNo" class="form-control" id="phoneNo">
+                    </div>
+                </div>
+    
+                <div class="col-sm-6">
+                    <div class="form-group">
+                        <label for="name">Name On Card:</label>
+                        <input formControlName="nameOnCard" placeholder="Name on Card" name="nameOnCard" class="form-control" id="nameOnCard">
+                    </div>
+    
+                    <div class="form-group">
+                        <label for="cardNumber">Card Number:</label>
+                        <input type="text" formControlName="cardNumber" placeholder="XXXXXXXXXX" name="cardNumber" class="form-control" id="cardNumber">
+                    </div>
+        
+                    <div class="form-group">
+                        <label for="cvv">CVV:</label>
+                        <input formControlName="cvv" placeholder="Zip cvv" name="cvv" class="form-control" id="cvv">
+                    </div>
+            
+                    <div class="form-group">
+                        <label for="date">Expiry Date:</label>
+                        <input formControlName="expiryDate" placeholder="06/20" name="expiryDate" class="form-control" id="expiryDate">
+                    </div>
+            
+                    <button class="btn btn-success">Enter Payment Setting</button>
+                </div>
+
+            </div>
+            </form>
+        
+        
+
+    </div>
+    </div>
+</div>

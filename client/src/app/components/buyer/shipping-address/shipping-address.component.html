@@ -1,0 +1,89 @@
+<p>shipping-address works!</p>
+
+<app-nav></app-nav>
+
+<div>
+   <br><br>
+</div>
+<div class="container">
+    <div class="row">
+        <div class="col-lg-3">
+            <app-side-buyer></app-side-buyer>
+        </div>
+    <div class="col-lg-9"><br><br>
+        <h2>Shipping Address</h2>
+
+        <form [formGroup]="addressForm" (ngSubmit)="onSubmit()">
+
+            <!-- <div class="hidden">
+                <input type="hidden" formControlName="_id" placeholder="id" name="_id" class="form-control" id="id">
+            </div>
+            <div class="hidden">
+                <input type="hidden" formControlName="status" placeholder="status" name="status" class="form-control" id="status">
+            </div> -->
+
+            <div class="form-group">
+                <label for="street">Street:</label>
+                <input formControlName="street" placeholder="Street" name="street" class="form-control" id="street">
+                <span class="text-danger"
+                                *ngIf="(registerFormControl.street.touched || submitted) && registerFormControl.street.errors?.required">
+                                Street is required
+                </span>
+            </div>
+
+            <div class="form-group">
+                <label for="zipCode">Zip Code:</label>
+                <input formControlName="zipCode" placeholder="Zip Code" name="zipCode" class="form-control" id="zipCode">
+            <span class="text-danger"
+                *ngIf="(registerFormControl.zipCode.touched || submitted) && registerFormControl.zipCode.errors?.required">
+                zipCode is required
+            </span>
+            <span class="text-danger"
+                *ngIf="registerFormControl.zipCode.touched && registerFormControl.zipCode.errors?.invalidzipCode">
+                zipCode should be with length 5, and all numbers
+                
+            </span>
+            </div>
+    
+            <div class="form-group">
+                <label for="city">City:</label>
+                <input formControlName="city" placeholder="City" name="city" class="form-control" id="city">
+                <span class="text-danger"
+                *ngIf="(registerFormControl.city.touched || submitted) && registerFormControl.city.errors?.required">
+                city is required
+                </span>
+            </div>
+    
+            <div class="form-group">
+                <label for="state">State:</label>
+                <input type="text" formControlName="state" placeholder="State" name="state" class="form-control" id="state">
+                <span class="text-danger"
+                *ngIf="(registerFormControl.state.touched || submitted) && registerFormControl.state.errors?.required">
+                State is required
+                </span>
+            </div>
+    
+            <div class="form-group">
+                <label for="country">Country:</label>
+                <input formControlName="country" placeholder="Country" name="country" class="form-control" id="country">
+                <span class="text-danger"
+                *ngIf="(registerFormControl.country.touched || submitted) && registerFormControl.country.errors?.required">
+                Country is required
+                </span>
+            </div>
+
+            <div class="form-group">
+                <label for="phone">Phone No:</label>
+                <input formControlName="phoneNo" placeholder="phone No." name="phone" class="form-control" id="phoneNo">
+                <span class="text-danger"
+                *ngIf="(registerFormControl.phoneNo.touched || submitted) && registerFormControl.phoneNo.errors?.required">
+                Phone Number is required
+                </span>
+            </div>
+    
+            <button class="btn btn-success">Enter Address</button>
+        </form>
+
+    </div>
+    </div>
+</div>
